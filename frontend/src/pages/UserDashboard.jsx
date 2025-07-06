@@ -36,7 +36,7 @@ const UserDashboard = () => {
   }, []);
 
   const handleStartQuiz = () => {
-    if (!selectedCategory) return alert("Please select a category");
+    if (!selectedCategory) return toast.error("Please select a category");
     navigate(`/user/quiz?category=${selectedCategory}`);
   };
 

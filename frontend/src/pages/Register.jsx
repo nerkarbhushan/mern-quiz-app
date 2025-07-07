@@ -16,7 +16,7 @@ const Register = () => {
     e.preventDefault();
     try {
       await api.post("/auth/register", form);
-      toast.success("Submitted successfully!");
+      toast.success("User Registerd successfully!");
       // alert("Registered successfully!");
       navigate("/");
     } catch (error) {
@@ -62,7 +62,7 @@ const Register = () => {
           className="w-full mb-4 p-2 border rounded"
         >
           <option value="user">User</option>
-          <option value="admin">Admin</option>
+          {/* <option value="admin">Admin</option> */}
         </select>
         <button
           type="submit"

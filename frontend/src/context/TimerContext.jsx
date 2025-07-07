@@ -9,7 +9,7 @@ export const TimerProvider = ({ children }) => {
 
   // Start the timer (5 minutes = 300 seconds)
   const startTimer = () => {
-    setTimeLeft(150);
+    setTimeLeft(50);
     setIsRunning(true);
   };
 

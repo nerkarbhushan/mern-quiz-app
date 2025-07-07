@@ -9,7 +9,8 @@ export const AuthProvider = ({ children }) => {
   );
   const [token, setToken] = useState(() => localStorage.getItem("token"));
   const resetTimer = () => {
-    setTimeLeft(300);
+    localStorage.removeItem("quizStartTime");
+    setTimeLeft(0);
   };
 
   // Timer state (5 minutes = 300 seconds)
@@ -17,9 +18,9 @@ export const AuthProvider = ({ children }) => {
     const storedStartTime = localStorage.getItem("quizStartTime");
     if (storedStartTime) {
       const elapsed = Math.floor((Date.now() - Number(storedStartTime)) / 1000);
-      return Math.max(150 - elapsed, 0);
+      return Math.max(50 - elapsed, 0);
     }
-    return 150;
+    return 50;
   });
 
   useEffect(() => {
@@ -44,7 +45,7 @@ export const AuthProvider = ({ children }) => {
   const startQuizTimer = () => {
     if (!localStorage.getItem("quizStartTime")) {
       localStorage.setItem("quizStartTime", Date.now());
-      setTimeLeft(150);
+      setTimeLeft(50);
     }
   };
 

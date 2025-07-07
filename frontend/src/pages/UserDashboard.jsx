@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import api from "../services/api";
 
 const UserDashboard = () => {
@@ -36,7 +37,7 @@ const UserDashboard = () => {
   }, []);
 
   const handleStartQuiz = () => {
-    if (!selectedCategory) return alert("Please select a category");
+    if (!selectedCategory) return toast.error("Please select a category");
     navigate(`/user/quiz?category=${selectedCategory}`);
   };
 

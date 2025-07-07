@@ -16,11 +16,7 @@ const Register = () => {
     e.preventDefault();
     try {
       await api.post("/auth/register", form);
-<<<<<<< HEAD
       toast.success("User Registerd successfully!");
-=======
-      toast.success("User Registered successfully!");
->>>>>>> 1a65bff21221d0d11c257d28dbdbdf3a169fe528
       // alert("Registered successfully!");
       navigate("/");
     } catch (error) {
